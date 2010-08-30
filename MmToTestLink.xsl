@@ -92,12 +92,14 @@
         
         <xsl:when test='$index = 2'>
           <steps>
-            <xsl:text disable-output-escaping='yes'>&lt;![CDATA[</xsl:text>
+            <xsl:text disable-output-escaping='yes'>&lt;![CDATA[
+&lt;ol&gt;</xsl:text>
             <xsl:apply-templates mode='contents'>
               <xsl:with-param name='depth' select='$depth + 1'/>
               <xsl:with-param name='index_of_components' select='$index'/>
             </xsl:apply-templates>
-            <xsl:text disable-output-escaping='yes'>]]&gt;</xsl:text>
+            <xsl:text disable-output-escaping='yes'>&lt;/ol&gt;
+]]&gt;</xsl:text>
           </steps>
         </xsl:when>
         
@@ -123,7 +125,7 @@
     <xsl:if test='$depth = $category_depth + 3'>
       <xsl:choose>
         <xsl:when test='$index_of_components = 2'>
-          <p><xsl:value-of select='@TEXT'/></p>
+          <li><xsl:value-of select='@TEXT'/></li>
         </xsl:when>
         
         <xsl:when test='$index_of_components = 4'>
