@@ -103,9 +103,7 @@
 
         <xsl:when test='$index = 3'>
           <expectedresults>
-            <xsl:text disable-output-escaping='yes'>&lt;![CDATA[</xsl:text>
-            <p><xsl:value-of select='@TEXT'/></p>
-            <xsl:text disable-output-escaping='yes'>]]&gt;</xsl:text>
+            <xsl:text disable-output-escaping='yes'>&lt;![CDATA[</xsl:text><xsl:value-of select='@TEXT'/><xsl:text disable-output-escaping='yes'>]]&gt;</xsl:text>
           </expectedresults>
         </xsl:when>
         <xsl:when test='$index = 4'>
